@@ -31,7 +31,7 @@ def dataset(hr_flist,
       tf.image.rot90(hr_image),
       tf.image.rot90(lr_image), scale, resize, upsampling_method)
   return tf.concat([hr_patches0, hr_patches1],
-                   0), tf.concat([lr_patches0, lr_patches1], 0)
+                   0), tf.concat([lr_patches0, lr_patches1], 0)       #扩充了90°的数据集.hr为残差的hr,lr为插值过的lr.(resize,residual=True)
 
 
 def _rescale(image, target_scale):

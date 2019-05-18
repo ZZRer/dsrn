@@ -61,7 +61,7 @@ def _make_patches(hr_image, lr_image, scale, resize, upsampling_method):
     lr_patches = util.image_to_patches(lr_image, scale)
   return hr_patches, lr_patches
 
-
+####图像上下左右翻转上下翻转
 def _flip(img_list):
   flipped_list = []
   for img in img_list:

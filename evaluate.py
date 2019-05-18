@@ -15,7 +15,7 @@ flags.DEFINE_string('prediction_dir', '',
 
 
 def compute_psnr(predction, ground_truth):
-  pred_y = skimage.color.rgb2ycbcr(prediction)[:,:,0:1]
+  pred_y = skimage.color.rgb2ycbcr(prediction)[:,:,0:1]             ##----只计算了Y通道的,也就是亮度
   gt_y = skimage.color.rgb2ycbcr(ground_truth)[:,:,0:1]
   return skimage.measure.compare_psnr(pred_y, gt_y, data_range=255)
 
